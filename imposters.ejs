@@ -1,0 +1,22 @@
+{
+        "imposters": [
+                {
+                        "port": "6969",
+                        "protocol": "http",
+                        "name": "profiles",
+                        "stubs": [
+                                {
+                                        "predicates": [ <% include profiles/success/success_predicates.ejs %> ],
+                                        "responses": [ <% include profiles/success/success_response.ejs %> ]
+                                },
+                                {
+                                        "predicates": [ <% include profiles/fail/fail_predicates.ejs %> ],
+                                        "responses": [ <% include profiles/fail/fail_response.ejs %> ]
+                                },
+                                {
+                                        "responses": [ <% include proxy.ejs %> ]
+                                }
+                        ]
+                }
+        ]
+}
